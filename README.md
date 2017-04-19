@@ -83,7 +83,7 @@ if (mouseIsPressed) {
 }
 ```
 
-And `fill(0)` makes the fill black, while `fill(255)` makes it white.
+The statement `fill(0);` makes the fill black, while `fill(255);` makes it white.
 
 (Hint: add the `if` statements before the `ellipse` line.)
 
