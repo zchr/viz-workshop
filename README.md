@@ -11,13 +11,17 @@ Be sure to look out for the following notations:
 * :rocket:: key step
 * :white_check_mark:: checkpoint reached!
 
-### :rocket: p5.js: Step 1
+We will **two** separate tasks, one in p5.js and one in Raphaël.
+
+## Part 1: A drawable canvas in p5.js
+
+### :rocket: Step 1
 
 First let's download the `p5.js` complete library. Clone the repository into yours and you will see the your repository like this:
 
 ![screenshot1](/screenshots/screenshot1.png)
 
-### :rocket: p5.js: Step 2
+### :rocket: Step 2
 Now let's link the library to your html.
 Include the following script into your header of the `index.html`:
 
@@ -37,7 +41,7 @@ We've also included an empty `sketch.js` file. Link that to your `index.html` as
 ```
 
 
-### :rocket: p5.js: Step 3
+### :rocket: Step 3
 Now let's draw something on your page! Start your handy dandy python server by running
 
 `python -m SimpleHTTPServer 9000`
@@ -74,7 +78,7 @@ This will draw an ellipse on a spot 50 pixels right and bottom from the screen. 
 
 ![screenshot3](/screenshots/screenshot3.png)
 
-### :rocket: p5.js: Step 4
+### :rocket: Step 4
 
 In your `draw()` function, let's draw circles with our mouse by changing our original line ot the one below:
 
@@ -104,7 +108,7 @@ The statement `fill(0);` makes the fill black, while `fill(255);` makes it white
 
 ![screenshot5](/screenshots/screenshot5.png)
 
-### :rocket: p5.js: Step 5
+### :rocket: Step 5
 
 Now let's add **random colors**!
 
@@ -145,11 +149,16 @@ rect(mouseX,mouseY,50,50);
 
 If the mouse is clicked, it will turn the rectangles to black.
 
-### :rocket: Raphaël: Step 1
+:white_check_mark: Cool! Now you can draw all the cool stuff. Let's move on to the next part.
+
+
+## Part 2: Interactive graph in Raphaël
+
+### :rocket: Step 1
 
 Not really a draw person? We'll now move on to visualizing data with Raphaël. In this tutorial, we will create a diagram using Raphaël. We will draw some arcs using mathematical functions and we'll be displaying a skill percentage in a mian circle when we hover over the arcs. Let's switch to the `raphael_tutorial.html` file.
 
-### :rocket: Raphaël: Step 2
+### :rocket: Step 2
 
 Let's link the library to your html.
 Include the following scripts into your header:
@@ -166,7 +175,7 @@ Include the following scripts into your header:
 <script src="init.js" type="text/javascript"></script>
 ```
 
-### :rocket: Raphaël: Step 3
+### :rocket: Step 3
 
 We've provided you with the markup in html and css so don't worry about those, but look through them to get a general idea. In `init.js`, we've created a new Raphaël object (variable 'r') and drew our first circle with a radius that we specified in 'rad'. Then we created a new circle in the Raphael object. We centered the circle (x: 300px and y: 300px) and we added some text to it.
 
@@ -176,26 +185,29 @@ We've provided you with the markup in html and css so don't worry about those, b
 
 Only the legend and one circle show right now, but don't worry!
 
-### :rocket: Raphaël: Step 4
+### :rocket: Step 4
 
 You'll extend the Raphael object with some custom attributes.
 
 Some things to note:
-  alpha – angle of the arc
-  random – random number from the specified range
-  sx, sy – start drawing from this point
-  x, y – end drawing at this point
-  path
-  M – move to the starting point. No line is drawn. All path data must begin with a ‘moveto’ command.
-  A – radius-x, radius-y x-axis-rotation, large-arc-flag, sweep-flag, x, y (read more: https://developer.mozilla.org/en/SVG/Tutorial/Paths)
+
+  * `alpha` – angle of the arc
+  * `random` – random number from the specified range
+  * `sx`, `sy` – start drawing from this point
+  * `x`, `y` – end drawing at this point
+  * `M` – move to the starting point. No line is drawn. All path data must begin with a `moveto` command.
+  * `A` – radius-x, radius-y x-axis-rotation, large-arc-flag, sweep-flag, x, y (read more: https://developer.mozilla.org/en/SVG/Tutorial/Paths)
 
 Let's start by adding:
+
 ``` js
 r.customAttributes.arc = function(value, color, rad){
 
 }
 ```
+
 Then copy and paste the following into the function:
+
 ``` js
 var v = 3.6*value,
   alpha = v == 360 ? 359.99 : v,
@@ -208,20 +220,24 @@ var v = 3.6*value,
   y = 300 - rad * Math.sin(a),
   path = [['M', sx, sy], ['A', rad, rad, 0, +(alpha > 180), 1, x, y]];
 ```
-and make sure this var v returns
+
+and make sure this `var v` returns
+
 ``` js
 { path: path, stroke: color }
 ```
-### :rocket: Raphaël: Step 5
 
-Next, copy this empty function call (still within var o):
+### :rocket: Step 5
+
+Next, copy this empty function call (still within `var o`):
+
 ``` js
 $('.get').find('.arc').each(function(i){
-
 }
 ```
 
 Add the variables
+
 ``` js
 var t = $(this),
   color = t.find('.color').val(),
@@ -236,7 +252,7 @@ var z = r.path().attr({ arc: [value, color, rad], 'stroke-width': 26 });
 
 ![screenshot9](/screenshots/screenshot9.png)
 
-### :rocket: Raphaël: Step 6
+### :rocket: Step 6
 
 Copy and paste this after our defined variables but still within the function.
 
@@ -260,9 +276,10 @@ Test out the hover and see the cool arcs expand!
 
 ## :white_check_mark: Hurray! You're done!!
 
-Go ahead and have fun drawing stuff :D 🎨
+Go ahead and have fun making pretty stuff :D 🎨
 
 ## Sources
 * https://p5js.org/
 * https://codepen.io/collection/DRzkdM/
 * http://dmitrybaranovskiy.github.io/raphael/
+* https://tympanus.net/codrops/2011/04/22/animated-skills-diagram/
