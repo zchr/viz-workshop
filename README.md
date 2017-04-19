@@ -11,7 +11,7 @@ Be sure to look out for the following notations:
 * :rocket:: key step
 * :white_check_mark:: checkpoint reached!
 
-We will **two** separate tasks, one in p5.js and one in Raphaël.
+We will work on **two** separate tasks, one in p5.js and one in Raphaël.
 
 ## Part 1: A drawable canvas in p5.js
 
