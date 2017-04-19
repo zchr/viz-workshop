@@ -26,13 +26,32 @@ If your index.html cannot link to the p5.js, you can alternatively link via p5.j
 
 `<script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js"></script>`
 
+We've also included an empty sketch.js file, link that to your index.html as well:
+
+`<script language="javascript" type="text/javascript" src="sketch.js"></script>`
+
 ## Step3: :rocket:
 Now let's draw something on your page! First go and open your index.html file on Chrome.
 
 ![screenshot2](/screenshots/screenshot2.png)
 
-Next, let's draw a simple circle onto your page.
-Open your sketch.js and add the following code in the draw function.
+Nothing on the page yet, so let's set up the canvas first, copy these two empty functions into sketch.js:
+
+```
+function setup() {
+
+}
+
+function draw() {
+
+}
+```
+
+Add the canvas by adding the following line into the `setup()` function:
+
+`createCanvas(640, 480);`
+
+Next, let's draw a simple circle onto your page. Add the following code in the `draw()` function:
 
 `ellipse(50, 50, 80, 80);`
 
@@ -43,13 +62,9 @@ Your page should now look something like this:
 ![screenshot3](/screenshots/screenshot3.png)
 
 ## Step4: :rocket:
-Now let's make a canvas where you can draw circles with your cursor!
+Now let's make the canvas draw-able!
 
-In your setup function, create a canvas that is 640 by 480 pixels by using the function:
-
-`createCanvas(width, height)`
-
-Then, in your draw function, let's make make where ever the mouse is to draw circles.
+In your `draw()` function, let's draw circles with our mouse by changing our original line ot the one below:
 
 `ellipse(mouseX, mouseY, 80, 80);`
 
@@ -58,9 +73,20 @@ Refresh your page and drag your mouse all over the page. This is how it should l
 ![screenshot4](/screenshots/screenshot4.png)
 
 
-From here, you should figure out how to draw a circle **black** whenever the mouse is pressed.
-Here are some functions that you can play around with: `mouseIsPressed` `fill()`
+Let's make the drawing interactive with clicking. As a start, let's try making the circle black when we press our mouse. A helpful `if-else` statement would be
 
-If you are successful, this is how your page should look like.
+```
+if (mouseIsPressed) {
+
+} else {
+
+}
+```
+
+And `fill(0)` makes the fill black, while `fill(255)` makes it white.
+
+(Hint: add the `if` statements before the `ellipse` line.)
+
+This is how your page should look like with a series of random presses!
 
 ![screenshot5](/screenshots/screenshot5.png)
