@@ -11,26 +11,14 @@ Be sure to look out for the following notations:
 * :rocket:: key step
 * :white_check_mark:: checkpoint reached!
 
-### :rocket: Step 1
+### :rocket: p5.js: Step 1
 
-<<<<<<< HEAD
-## p5.js: Step 1 :rocket:
-First let's download the p5.js complete library. Clone the repository into yours and you will see the your repository like this:
-
-![screenshot1](/screenshots/screenshot1.png)
-
-## p5.js: Step 2 :rocket:
-Now let's link the library to your html.
-Include the following script into your header of the index.html:
-=======
 First let's download the `p5.js` complete library. Clone the repository into yours and you will see the your repository like this:
 
 ![screenshot1](/screenshots/screenshot1.png)
 
-### :rocket: Step 2
->>>>>>> 3f96fbe4d6b2e5de7045531b6dd5e4488c4394f8
-
-Now let's link the library to your webpage.  
+### :rocket: p5.js: Step 2
+Now let's link the library to your html.
 Include the following script into your header of the `index.html`:
 
 ``` html
@@ -44,21 +32,17 @@ If your `index.html` cannot link to the `p5.js` file, you can alternatively link
 ```
 
 We've also included an empty `sketch.js` file. Link that to your `index.html` as well:
-
-<<<<<<< HEAD
-## p5.js: Step 3 :rocket:
-Now let's draw something on your page! Start your handy dandy python server by running
-=======
 ``` html
 <script language="javascript" type="text/javascript" src="sketch.js"></script>
 ```
 
-### :rocket: Step 3
 
-Now let's draw something on your page! First go and open your `index.html` file on Chrome.
->>>>>>> 3f96fbe4d6b2e5de7045531b6dd5e4488c4394f8
+### :rocket: p5.js: Step 3
+Now let's draw something on your page! Start your handy dandy python server by running
 
-`python -m SimpleHTTPServer 9000` on your :computer:
+`python -m SimpleHTTPServer 9000`
+
+on your :computer:.
 
 Check it out on your [localhost](http://localhost:9000/). Nothing on the page yet, so let's set up the canvas first, copy these two empty functions into sketch.js:
 
@@ -90,13 +74,7 @@ This will draw an ellipse on a spot 50 pixels right and bottom from the screen. 
 
 ![screenshot3](/screenshots/screenshot3.png)
 
-<<<<<<< HEAD
-## Step 4 :rocket:
-=======
-### :rocket: Step 4
-
->>>>>>> 3f96fbe4d6b2e5de7045531b6dd5e4488c4394f8
-Now let's make the canvas draw-able!
+### :rocket: p5.js: Step 4
 
 In your `draw()` function, let's draw circles with our mouse by changing our original line ot the one below:
 
@@ -108,7 +86,6 @@ Refresh your page and drag your mouse all over the page. This is how it should l
 
 ![screenshot4](/screenshots/screenshot4.png)
 
-## Step 5 :rocket:
 Let's make the drawing interactive with clicking. As a start, let's try making the circle black when we press our mouse. A helpful `if-else` statement would be
 
 ``` js
@@ -127,7 +104,7 @@ The statement `fill(0);` makes the fill black, while `fill(255);` makes it white
 
 ![screenshot5](/screenshots/screenshot5.png)
 
-### :rocket: Step 5
+### :rocket: p5.js: Step 5
 
 Now let's add **random colors**!
 
@@ -139,7 +116,7 @@ A simple way to do this is to create red, green, and blue variables -- each set 
 
 ![screenshot6](/screenshots/screenshot6.png)
 
-### :rocket: Step 6
+### :rocket: p5.js: Step 6
 
 Now let's do something cool!! This is what we will make, upgrading from the little circles we made.
 
@@ -166,7 +143,10 @@ Now you'll have beautiful circles all around the page. Next, we will change the 
 rect(mouseX,mouseY,50,50);
 ```
 
- If the mouse is clicked, it will turn the rectangles to black.
+If the mouse is clicked, it will turn the rectangles to black.
+
+### :rocket: Raphaël: Step 1
+Not really a draw person? We'll now move on to visualizing data with Raphaël.
 
 ## :white_check_mark: Hurray! You're done!!
 
