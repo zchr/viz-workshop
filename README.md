@@ -61,7 +61,7 @@ Your page should now look something like this:
 
 ![screenshot3](/screenshots/screenshot3.png)
 
-## Step4: :rocket:
+## Step 4: :rocket:
 Now let's make the canvas draw-able!
 
 In your `draw()` function, let's draw circles with our mouse by changing our original line ot the one below:
@@ -91,7 +91,7 @@ This is how your page should look like with a series of random presses!
 
 ![screenshot5](/screenshots/screenshot5.png)
 
-## Step5: :rocket:
+## Step 5: :rocket:
 Now let's add random colors!
 
 We want to keep the black circles when the mouse is pressed, so lets give random colors to the fill under else.
@@ -100,4 +100,32 @@ A simple way to do this is to create red, green, and blue variables -- each set 
 
 Now your page should look something like this.
 
-![screenshot5](/screenshots/screenshot6.png)
+![screenshot6](/screenshots/screenshot6.png)
+
+## Step 6: :rocket:
+Now let's do something cool!! This is what we will make, upgrading from the little circles we made.
+
+![screenshot7](/screenshots/screenshot7.png)
+
+First, we are going to change the fill so that the colors will change based on the position of the mouse cursor.
+
+`fill((mouseX / width) * 255, (mouseY / height) * 255, 0, 100);`
+
+This will make sure that the RGB is set based on the position of the mouse.
+The circles will look ugly now because of the black strokes(outlines). Let's change it.
+
+Add the stroke function:
+
+`stroke(255, 255, 255, 25);`
+
+Now you'll have beautiful circles all around the page. Next, we will change the circles to rectangles. Just update ellipse() to rect().
+
+`rect(mouseX,mouseY,50,50);`
+
+ If the mouse is clicked it will still turn the rectangles to black.
+
+ ## Hurray! You're done!!
+
+ ## Sources
+
+ - https://p5js.org/
