@@ -146,7 +146,117 @@ rect(mouseX,mouseY,50,50);
 If the mouse is clicked, it will turn the rectangles to black.
 
 ### :rocket: Raphaël: Step 1
-Not really a draw person? We'll now move on to visualizing data with Raphaël.
+
+Not really a draw person? We'll now move on to visualizing data with Raphaël. In this tutorial, we will create a diagram using Raphaël. We will draw some arcs using mathematical functions and we'll be displaying a skill percentage in a mian circle when we hover over the arcs. Let's switch to the `raphael_tutorial.html` file.
+
+### :rocket: Raphaël: Step 2
+
+Let's link the library to your html.
+Include the following scripts into your header:
+
+``` html
+<script src="js/jquery.js" type="text/javascript"></script>
+```
+
+``` html
+<script src="js/raphael.js" type="text/javascript"></script>
+```
+
+``` html
+<script src="init.js" type="text/javascript"></script>
+```
+
+### :rocket: Raphaël: Step 3
+
+We've provided you with the markup in html and css so don't worry about those, but look through them to get a general idea. In `init.js`, we've created a new Raphaël object (variable 'r') and drew our first circle with a radius that we specified in 'rad'. Then we created a new circle in the Raphael object. We centered the circle (x: 300px and y: 300px) and we added some text to it.
+
+:white_check_mark: You should see something like this!
+
+![screenshot8](/screenshots/screenshot8.png)
+
+Only the legend and one circle show right now, but don't worry!
+
+### :rocket: Raphaël: Step 4
+
+You'll extend the Raphael object with some custom attributes.
+
+Some things to note:
+  alpha – angle of the arc
+  random – random number from the specified range
+  sx, sy – start drawing from this point
+  x, y – end drawing at this point
+  path
+  M – move to the starting point. No line is drawn. All path data must begin with a ‘moveto’ command.
+  A – radius-x, radius-y x-axis-rotation, large-arc-flag, sweep-flag, x, y (read more: https://developer.mozilla.org/en/SVG/Tutorial/Paths)
+
+Let's start by adding:
+``` js
+r.customAttributes.arc = function(value, color, rad){
+
+}
+```
+Then copy and paste the following into the function:
+``` js
+var v = 3.6*value,
+  alpha = v == 360 ? 359.99 : v,
+  random = o.random(91, 240),
+  a = (random-alpha) * Math.PI/180,
+  b = random * Math.PI/180,
+  sx = 300 + rad * Math.cos(b),
+  sy = 300 - rad * Math.sin(b),
+  x = 300 + rad * Math.cos(a),
+  y = 300 - rad * Math.sin(a),
+  path = [['M', sx, sy], ['A', rad, rad, 0, +(alpha > 180), 1, x, y]];
+```
+and make sure it returns
+``` js
+{ path: path, stroke: color }
+```
+### :rocket: Raphaël: Step 5
+
+Still in var o, lets add:
+``` js
+$('.get').find('.arc').each(function(i){
+
+}
+```
+
+Add the variables
+``` js
+var t = $(this),
+  color = t.find('.color').val(),
+  value = t.find('.percent').val(),
+  text = t.find('.text').text();
+
+rad += 30;
+var z = r.path().attr({ arc: [value, color, rad], 'stroke-width': 26 });
+```
+
+:white_check_mark: Cool! Now we have a diagram like this, but we want to make it more exciting! Let's add some cool hover effects.
+
+![screenshot9](/screenshots/screenshot9.png)
+
+### :rocket: Raphaël: Step 6
+
+Copy and paste this after our defined variables but still within the function.
+
+``` js
+z.mouseover(function(){
+          this.animate({ 'stroke-width': 50, opacity: .75 }, 1000, 'elastic');
+          if(Raphael.type != 'VML') //solves IE problem
+  this.toFront();
+  title.stop().animate({ opacity: 0 }, speed, '>', function(){
+    this.attr({ text: text + '\n' + value + '%' }).animate({ opacity: 1 }, speed, '<');
+  });
+      }).mouseout(function(){
+  this.stop().animate({ 'stroke-width': 26, opacity: 1 }, speed*4, 'elastic');
+  title.stop().animate({ opacity: 0 }, speed, '>', function(){
+    title.attr({ text: defaultText }).animate({ opacity: 1 }, speed, '<');
+  });
+      });
+```
+Test out the hover and see the cool arc expand!
+![screenshot10](/screenshots/screenshot10.png)
 
 ## :white_check_mark: Hurray! You're done!!
 
@@ -155,3 +265,4 @@ Go ahead and have fun drawing stuff :D 🎨
 ## Sources
 * https://p5js.org/
 * https://codepen.io/collection/DRzkdM/
+* http://dmitrybaranovskiy.github.io/raphael/
