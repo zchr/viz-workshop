@@ -208,13 +208,13 @@ var v = 3.6*value,
   y = 300 - rad * Math.sin(a),
   path = [['M', sx, sy], ['A', rad, rad, 0, +(alpha > 180), 1, x, y]];
 ```
-and make sure it returns
+and make sure this var v returns
 ``` js
 { path: path, stroke: color }
 ```
 ### :rocket: Raphaël: Step 5
 
-Still in var o, lets add:
+Next, copy this empty function call (still within var o):
 ``` js
 $('.get').find('.arc').each(function(i){
 
@@ -255,7 +255,7 @@ z.mouseover(function(){
   });
       });
 ```
-Test out the hover and see the cool arc expand!
+Test out the hover and see the cool arcs expand!
 ![screenshot10](/screenshots/screenshot10.png)
 
 ## :white_check_mark: Hurray! You're done!!
