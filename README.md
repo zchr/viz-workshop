@@ -90,3 +90,14 @@ The statement `fill(0);` makes the fill black, while `fill(255);` makes it white
 This is how your page should look like with a series of random presses!
 
 ![screenshot5](/screenshots/screenshot5.png)
+
+## Step5: :rocket:
+Now let's add random colors!
+
+We want to keep the black circles when the mouse is pressed, so lets give random colors to the fill under else.
+
+A simple way to do this is to create red, green, and blue variables -- each set to random(255). Then we can replace fill(255) with fill(red, green, blue). You can play around with the random variables in case you want to stay within certain color ranges.
+
+Now your page should look something like this.
+
+![screenshot5](/screenshots/screenshot6.png)
