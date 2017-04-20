@@ -156,7 +156,7 @@ If the mouse is clicked, it will turn the rectangles to black.
 
 ### :rocket: Step 1
 
-Not really a draw person? We'll now move on to visualizing data with Raphaël. In this tutorial, we will create a diagram using Raphaël. We will draw some arcs using mathematical functions and we'll be displaying a skill percentage in a mian circle when we hover over the arcs. Let's switch to the `raphael_tutorial.html` file.
+Not really a draw person? We'll now move on to visualizing data with Raphaël. In this tutorial, we will create a diagram using Raphaël. We will draw some arcs using mathematical functions and we'll be displaying a skill percentage in a main circle when we hover over the arcs. Let's switch to the `raphael_tutorial.html` file.
 
 ### :rocket: Step 2
 
