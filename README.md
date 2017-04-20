@@ -202,7 +202,7 @@ Some things to note:
   * `M` – move to the starting point. No line is drawn. All path data must begin with a `moveto` command.
   * `A` – radius-x, radius-y x-axis-rotation, large-arc-flag, sweep-flag, x, y (read more: https://developer.mozilla.org/en/SVG/Tutorial/Paths)
 
-Let's start by adding:
+Let's start by adding the following line to `init.js`:
 
 ``` js
 r.customAttributes.arc = function(value, color, rad){
