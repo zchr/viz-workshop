@@ -237,7 +237,8 @@ Next, copy this empty function call (still within `var o`):
 
 ``` js
 $('.get').find('.arc').each(function(i){
-}
+  
+});
 ```
 
 Add the variables
