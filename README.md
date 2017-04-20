@@ -149,7 +149,7 @@ rect(mouseX,mouseY,50,50);
 
 If the mouse is clicked, it will turn the rectangles to black.
 
-:white_check_mark: Cool! Now you can draw all the cool stuff. Let's move on to the next part.
+:white_check_mark: Cool! Now you can draw all the cool stuff. Take a screenshot of your coolest drawing! Let's move on to the next part.
 
 
 ## Part 2: Interactive graph in Raphaël
@@ -282,6 +282,8 @@ Test out the hover and see the cool arcs expand!
 ## :white_check_mark: Hurray! You're done!!
 
 Go ahead and have fun making pretty stuff :D 🎨
+
+Submit screenshots of your final pages (both p5.js & Raphaël), especially fun drawings!
 
 ## Sources
 * https://p5js.org/
