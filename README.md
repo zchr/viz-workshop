@@ -120,7 +120,7 @@ A simple way to do this is to create red, green, and blue variables -- each set 
 
 ![screenshot6](/screenshots/screenshot6.png)
 
-### :rocket: p5.js: Step 6
+### :rocket: Step 6
 
 Now let's do something cool!! This is what we will make, upgrading from the little circles we made.
 
@@ -179,7 +179,11 @@ Include the following scripts into your header:
 
 We've provided you with the markup in html and css so don't worry about those, but look through them to get a general idea. In `init.js`, we've created a new Raphaël object (variable 'r') and drew our first circle with a radius that we specified in 'rad'. Then we created a new circle in the Raphael object. We centered the circle (x: 300px and y: 300px) and we added some text to it.
 
-:white_check_mark: You should see something like this!
+:white_check_mark: Now run the server again with
+
+`python -m SimpleHTTPServer 9000`
+
+This time go on [http://localhost:9000/raphael_tutorial.html](http://localhost:9000/raphael_tutorial.html), you should see something like this!
 
 ![screenshot8](/screenshots/screenshot8.png)
 
