@@ -21,6 +21,6 @@ var o = {
 		<!-- custom attributes here! -->
 
 
-		
+
 }
 $(function(){ o.init(); });
