@@ -233,7 +233,7 @@ and make sure this `var v` returns
 
 ### :rocket: Step 5
 
-Next, copy this empty function call (still within `var o`):
+Next, copy this empty function call (still within `var o`, inside the `diagram: function()`):
 
 ``` js
 $('.get').find('.arc').each(function(i){
