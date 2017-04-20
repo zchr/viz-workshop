@@ -237,7 +237,7 @@ Next, copy this empty function call (still within `var o`):
 
 ``` js
 $('.get').find('.arc').each(function(i){
-  
+
 });
 ```
 
@@ -259,22 +259,22 @@ var z = r.path().attr({ arc: [value, color, rad], 'stroke-width': 26 });
 
 ### :rocket: Step 6
 
-Copy and paste this after our defined variables but still within the function.
+Copy and paste this after our defined variables but still within the function following `$('.get')`.
 
 ``` js
 z.mouseover(function(){
-          this.animate({ 'stroke-width': 50, opacity: .75 }, 1000, 'elastic');
-          if(Raphael.type != 'VML') //solves IE problem
-  this.toFront();
+  this.animate({ 'stroke-width': 50, opacity: .75 }, 1000, 'elastic');
+  if(Raphael.type != 'VML') //solves IE problem
+    this.toFront();
   title.stop().animate({ opacity: 0 }, speed, '>', function(){
     this.attr({ text: text + '\n' + value + '%' }).animate({ opacity: 1 }, speed, '<');
   });
-      }).mouseout(function(){
+}).mouseout(function(){
   this.stop().animate({ 'stroke-width': 26, opacity: 1 }, speed*4, 'elastic');
   title.stop().animate({ opacity: 0 }, speed, '>', function(){
     title.attr({ text: defaultText }).animate({ opacity: 1 }, speed, '<');
   });
-      });
+});
 ```
 Test out the hover and see the cool arcs expand!
 ![screenshot10](/screenshots/screenshot10.png)
